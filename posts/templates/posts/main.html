@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+posts
+{% endblock title %}
+
+{% block content %}
+<div class="ui grid">
+    <div class="row ">
+        <div class="eleven wide column">
+         
+        </div>
+    </div>
+</div>   
+{% for obj in qs %}
+   <p>{{obj.content}}</p>
+{% endfor %}
+{% endblock content %}
