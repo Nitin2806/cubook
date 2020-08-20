@@ -1,13 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from .utils import get_random_code
-from django.template.defaultfilters import slugify
 from django.utils.text import slugify
 
 # Create your models here.
 class Profile(models.Model):
     first_name = models.CharField(max_length=200,blank = True)
-    last_name = models.CharField(max_length=100,blank = True)
+    last_name = models.CharField(max_length=100,blank=True)
     user = models.OneToOneField(User ,on_delete=models.CASCADE)
     bio = models.TextField(default="User has no Bio!!!",max_length =500)
     email = models.EmailField(max_length= 200,blank = True)
@@ -35,12 +34,16 @@ class Profile(models.Model):
         total_liked = 0
         for item in likes:
             if item.value=='Like':
-                total_liked = 1
+                total_liked += 1
         return total_liked
-    
-    
 
-
+    def get_likes_recieved_no(self):
+        posts=self.posts.all()
+        total_liked=0
+        for item in posts:
+            total_liked +=item.liked.all().count()
+        return total_liked
+ 
     def __str__(self):
         return f"{self.user.username}-{self.created.strftime('%d-%m-%Y')}"
 
