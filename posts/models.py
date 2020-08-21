@@ -25,7 +25,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    post = models.ForeignKey(Post ,on_delete=models.CASCADE)
     body = models.TextField(max_length = 300,blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -36,7 +36,6 @@ class Comment(models.Model):
 LIKE_CHOICES=(
     ('Like','Like'),
     ('Unlike','Unlike'),
-
 )
 class Like(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
