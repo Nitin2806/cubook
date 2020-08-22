@@ -22,6 +22,13 @@ def post_comment_create_and_list_view(request):
         instance.save()
         p_form=PostModelForm()
 
+    if c_form.is_valid():
+        instance = c_form.save(commit=False)
+        instance = profile
+        instance.post = Post.objects.get(id=request.POST.get('post_id'))
+        instance.save()
+        c_form = CommentModelForm()
+
     context={
         'qs': qs,
         'profile': profile,
@@ -35,14 +42,14 @@ def like_unlike_post(request):
     if request.method=="POST":
         post_id=request.POST.get('post_id')
         post_obj=Post.objects.get(id=post_id)
-        profile=Profile.objects.get(user=user)
+        profile = Profile.objects.get(user=user)
 
         if profile in post_obj.liked.all():
             post_obj.liked.remove(profile)
         else:
             post_obj.liked.add(profile)
 
-        like,created=Like.objects.get_or_create(user=profile,post_id=post_id)
+        like,created = Like.objects.get_or_create(user=profile,post_id=post_id)
 
         if not created:
             if like.value=='Like':
