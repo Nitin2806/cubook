@@ -1,11 +1,10 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block title %}
 myprofile
 {% endblock title %}
 
 {% block content %}
  <!---MODAL--->
- <!---Edit profile Window--->
 <div class="ui modal mymodal">
   <i class="close icon"></i>
   <div class="header">
@@ -16,7 +15,7 @@ myprofile
       <img src="{{profile.avatar.url}}">
     </div>
     <div class="description">
-      <div class="ui header">Information About You</div>
+      <div class="ui header">About You</div>
       <form action="" method="POST" class="ui form" enctype ='multipart/form-data'>
        {% csrf_token %}
        {{form.as_p}}

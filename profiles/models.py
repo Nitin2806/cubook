@@ -8,7 +8,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=200,blank = True)
     last_name = models.CharField(max_length=100,blank=True)
     user = models.OneToOneField(User ,on_delete=models.CASCADE)
-    bio = models.TextField(default="User has no Bio!!!",max_length =500)
+    bio = models.TextField(default="User has no Bio!",max_length =500)
     email = models.EmailField(max_length= 200,blank = True)
     country = models.CharField(max_length= 200,blank = True)
     avatar = models.ImageField(default='avatar.png', upload_to ='avatars/')

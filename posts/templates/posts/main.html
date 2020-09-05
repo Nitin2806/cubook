@@ -22,20 +22,29 @@ posts
                                     {% else %}
                                         <i class="thumbs down icon"></i>&nbsp;Unlike
                                     {% endif %}
+
                                 </button>
                                 &nbsp;{{obj.num_likes}}
                             </form>
+                        </div>
+                        <div>
+                        {% if obj.comment_set.all %}
+                            {% for  c in obj.comment_set.all %}
+                               <p>{{c.body}}</p>
+                            {%  endfor %}
+                        {% endif %}
                         </div>
                           <form action="" method="POST" class="ui form">
                           {% csrf_token %}
                           <input type="hidden" name="post_id" value={{obj.id}}>
                           {{c_form}}
                           <button type="submit" class="ui primary button" name="submit_c_form">Comment</button>
+                          </form>
                         </div>
             {% endfor %}
         </div>
      <div class="four wide column">
-        {% if post_added %}
+        {% if  post_added %}
             <div class="ui green message">Posted</div>
         {% endif %}
             <form action="" method="POST" class="ui form" enctype="multipart/form-data">
