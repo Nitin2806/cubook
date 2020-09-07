@@ -16,5 +16,6 @@ body{
 .mymodal{
     height: 100px !important;
     top: 100px !important;
-    font-size: 100px !important;
+    bottom: 60px !important;
+    font-size: 20px !important;
 }
