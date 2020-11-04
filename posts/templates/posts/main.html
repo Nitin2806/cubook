@@ -6,7 +6,7 @@
 <div class="ui grid">
     <div class="eleven wide column">
         {% for obj in qs %}
- 
+
         <div class="ui fluid card">
             <div class="content">
                 <div class="right floated meta">
@@ -21,7 +21,7 @@
                     
                 </div>
                 <img class="ui avatar image" src={{obj.author.avatar.url}}> 
-                {{ obj.author.first_name}} {{ obj.author.last_name}} - {{ obj.created|timesince}} ago
+                {{ obj.author.user }} - {{ obj.created|timesince}} ago
             </div>
             <div class="ui fluid image">
                 {% if obj.image %}
