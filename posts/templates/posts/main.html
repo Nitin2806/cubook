@@ -21,7 +21,7 @@
                     
                 </div>
                 <img class="ui avatar image" src={{obj.author.avatar.url}}> 
-                {{ obj.author.user }} - {{ obj.created|timesince}} ago
+                {{ obj.author.first_name }} {{ obj.author.last_name }} - {{ obj.created|timesince}} ago
             </div>
             <div class="ui fluid image">
                 {% if obj.image %}
