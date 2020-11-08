@@ -1,0 +1,1 @@
+This folder("static_cdn") should be placed together with the master project("cubook") in virtual env as the setting.py get's the location of all the root from static_cdn
