@@ -1,14 +1,33 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block title %}
-Invites friends
+Invites send
 {% endblock title %}
 
 {% block content %}
-    <ul>
-       {% for item in qs %}
-          <li>{{item}}</li>
-       {% endfor %}
-    </ul>
+
+    {% if is_empty %}
+        <h1>You haven't send any invitations</h1>
+    {% endif %}
+ 
+    {% for item in qs %}
+        <div class="ui segment">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="three wide column">
+                        <img class="ui small circular image" src={{item.avatar.url}}>
+                    </div>
+                    <div class="thirteen wide column">
+                        <h3>{{item.first_name}}  {{item.last_name}}</h3>
+                        <p>{{item.bio}}</h3>
+                        <br>
+                        <a href={{item.get_absolute_url}}>
+                            <button class="ui primary button w-big mb-5">See profile</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock content %}

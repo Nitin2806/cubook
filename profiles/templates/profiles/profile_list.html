@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-all profiles
+All profiles
 {% endblock title %}
 
 {% block content %}
 
     {% if is_empty %}
-        <h1>No profiles to interact with</h1>
+        <h1>No profiles to interact here</h1>
     {% endif %}
 
     {% for obj in object_list %}

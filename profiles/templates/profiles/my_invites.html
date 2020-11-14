@@ -21,7 +21,7 @@ my invites
                         <h3>{{obj.first_name}}  {{obj.last_name}}</h3>
                         <p>{{obj.bio}}</h3>
                         <br>
-                        <a href="">
+                        <a href={{obj.get_absolute_url}}>
                             <button class="ui primary button w-big mb-5">See profile</button>
                         </a>
                         <form action="{% url 'profiles:accept-invite' %}" method="POST">
