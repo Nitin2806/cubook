@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}main page{% endblock title %}
+{% block title %}Posts{% endblock title %}
 
 {% block content %}
 <div class="ui grid">
@@ -26,7 +26,7 @@
             <div class="ui fluid image">
                 {% if obj.image %}
                     <img src={{obj.image.url}}>
-                {% endif %}
+                {% endif %} 
             </div>
             <div class="content">
                 <p> {{ obj.content }} </p>
@@ -34,32 +34,33 @@
                     <form action="{% url 'posts:like-post-view' %}" method="POST" class='like-form' id='{{obj.id}}'>
                         {% csrf_token %}
                         <input type="hidden" name="post_id" value={{obj.id}}>
-                        
+                            
                             <button type="submit" class="ui button like-btn{{obj.id}}">
                                 {% if profile not in obj.liked.all %}
-                                    Like
+                                    <i class="heart icon"></i>Like
                                 {% else %}
-                                    Unlike
+                                   <i class="thumbs down icon"></i>Unlike
                                 {% endif %}
                             </button>
+                            
                             <div class="ui grid">
                                 <div class="column">
-                                    <div class="like-count{{obj.id}}"> {{obj.num_likes}} </div>
+                                    <div class="like-count{{obj.id}}">{{obj.num_likes}}</div>
                                 </div>
                                 <div class="column">
-                                    likes
+                                    Likes
                                 </div>
                             </div>
                     </form>
                 </div>
                 <i class="comment icon"></i>
-                <span> {{ obj.num_comments }} comments</span>
+                <span> {{ obj.num_comments }} Comments</span>
             </div>
             <div class="extra content">
                 <div class="mb-5">
                   
                 </div>
-                <button class="cmt_btn ui button mb-5">show / hide comments</button>
+                <button class="cmt_btn ui button mb-5"><i class="comment icon"></i>Comments</button>
                 <div class="comment-box">
                 {% if obj.comment_set.all %}
                     {% for c in obj.comment_set.all %}
