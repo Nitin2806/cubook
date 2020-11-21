@@ -13,7 +13,7 @@ class ProfileManager(models.Manager):
         profile = Profile.objects.get(user=sender)
         qs = Relationship.objects.filter(Q(sender=profile) | Q(receiver=profile))
         print(qs)
-        print("#########")
+        
 
         accepted = set([])
         for rel in qs:
@@ -21,11 +21,10 @@ class ProfileManager(models.Manager):
                 accepted.add(rel.receiver)
                 accepted.add(rel.sender)
         print(accepted)
-        print("#########")
+        
 
         available = [profile for profile in profiles if profile not in accepted]
         print(available)
-        print("#########")
         return available
         
 

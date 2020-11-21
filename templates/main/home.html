@@ -18,12 +18,19 @@ Welcome to cubook
     Thank You Developers
   </h4>
   <p><b>Cubook is Social networking Website designed using Django  framework.</b><br>
-  <b>The Frontend is developed using Semantic UI</b></p>
+  <b>The Frontend is developed using Semantic UI</b><br>
+  <b>The database is designed using SQLite which is the default database of Django Framework</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 </div>
+
+  <h3 class="ui center aligned block header">Developers</h3>
 
 <div class="ui link cards">
-
   <div class="card">
     <div class="image">
       <img src="">
@@ -31,11 +38,12 @@ Welcome to cubook
     <div class="content">
       <div class="header">Nitin Mishra</div>
       <div class="meta">
-        <a>Friends</a>
+        <a>Full Stack Developer</a>
       </div>
       <div class="description">
        Frontend and Backend Developer.
       </div>
+      <br>
        <button class="ui circular facebook icon button">
       <i class="facebook icon"></i>
      </button>
@@ -43,7 +51,7 @@ Welcome to cubook
       <i class="twitter icon"></i>
      </button>
      <button class="ui circular linkedin icon button" >
-     <i class="linkedin icon"></i>
+     <i class="linkedin icon"> <a href="http://www.linkedin.com/shareArticle?url=https://www.linkedin.com/in/nitin-mishra-96790889/{{ request.get_full_path|urlencode }}&title=<your title>&summary=<your desc>&source=http://your-domain"></a></i>
      </button>
      <button class="ui circular google plus icon button">
       <i class="google plus icon"></i>
@@ -56,7 +64,7 @@ Welcome to cubook
   
   <div class="card">
     <div class="image">
-      <img src="{% static '/ritik.png' %}"> 
+      <!--<img src="{% static '/ritik.png' %}"> -->
     </div>
     <div class="content">
       <div class="header">Ritik Goel</div>
@@ -66,8 +74,8 @@ Welcome to cubook
       <div class="description">
         Handling backend.
       </div>
+      <br>
        <button class="ui circular facebook icon button">
-       
        <i class="facebook icon"></i>
      </button>
      <button class="ui circular twitter icon button">
@@ -84,6 +92,8 @@ Welcome to cubook
     </button>
     </div>
   </div>
+
+
   <div class="card">
     <div class="image">
       <img src="">
@@ -96,6 +106,7 @@ Welcome to cubook
       <div class="description">
        Frontend Designer
       </div>
+      <br>
        <button class="ui circular facebook icon button">
       <i class="facebook icon"></i>
      </button>
@@ -113,6 +124,7 @@ Welcome to cubook
     </button>
     </div>
   </div>
+
   <div class="card">
     <div class="image">
       <img src="">
@@ -125,6 +137,7 @@ Welcome to cubook
       <div class="description">
        Frontend Designer
       </div>
+      <br>
      <button class="ui circular facebook icon button">
       <i class="facebook icon"></i>
      </button>
@@ -142,16 +155,8 @@ Welcome to cubook
     </button>
     </div>
   </div>
-  
 </div>
 {% endblock content %}
-
-
-
-
-
-
-
 
 
 {% block scripts %}
