@@ -5,7 +5,7 @@
 {% url 'profiles:invite-profiles-view' as path_to_invites %}
 {% url 'profiles:all-profiles-view' as path_to_all_profile %}
 
-<div class="ui inverted menu nav mb-7">
+<div class="ui fixed inverted menu nav mb-7">
     <div class="ui container">
         <a href="{{path_to_posts}}" class="{% if request.path == path_to_posts %}  {% endif %}item">
             <h3><i class="large universal access icon"></i>cubook</h3>
