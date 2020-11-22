@@ -4,11 +4,11 @@ body {
 
 .nav {
     border-radius: 0px !important;
-    padding: 10px 0 10px 0 !important;
-    background-color: #0000ff !important;
+    padding: 9px 0 9px 0 !important;
+    background-color: #0e0ed6 !important;
 }
 .nav a:hover{
-    background-color: #2f2fff !important;
+    background-color: #0404ec !important;
 }
 
 
