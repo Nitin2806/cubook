@@ -4,7 +4,7 @@ body {
 
 .nav {
     border-radius: 0px !important;
-    padding: 9px 0 10px 0 !important;
+    padding: 6px 0 4px 0 !important;
     background-color: #0e0ed6 !important;
 }
 .nav a:hover{
@@ -48,3 +48,8 @@ body {
 }
 
 
+.footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
