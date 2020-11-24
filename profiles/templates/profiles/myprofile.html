@@ -5,36 +5,35 @@ My Profile
 {% endblock title %}
 
 {% block content %}
-
 <!-- MODAL -->
 <div class="ui modal mymodal">
-  <i class="close icon"></i>
-  <div class="header">
-    Update your Profile
-  </div>
-  <div class="image content">
-    <div class="ui medium image">
-      <img src="{{profile.avatar.url}}">
+    <i class="close icon"></i>
+    <div class="header">
+        Update your Profile
     </div>
-    <div class="description">
-      <div class="ui header">Edit Profile </div>
-     <form action="" method="POST" class="ui form" enctype='multipart/form-data'>
-        {% csrf_token %}
-        {{form.as_p}}
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="{{profile.avatar.url}}">
+        </div>
+        <div class="description">
+            <div class="ui header">Edit Profile </div>
+            <form action="" method="POST" class="ui form" enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{form.as_p}}
+        </div>
     </div>
-  </div>
-  <div class="actions">
-    <button type='submit' class="ui positive right labeled icon button">
-      Update
-      <i class="checkmark icon"></i>
-    </button>
-    </form>
-  </div>
+    <div class="actions">
+        <button type='submit' class="ui positive right labeled icon button">
+            Update
+            <i class="checkmark icon"></i>
+        </button>
+        </form>
+    </div>
 </div>
 
 <div class="ui segment">
     {% if confirm %}
-        <div class="ui green message">Your profile has been updated</div>
+    <div class="ui green message">Your profile has been updated</div>
     {% endif %}
     <h3>{{request.user}}</h3>
     <div class="ui grid">
@@ -50,7 +49,7 @@ My Profile
                     <tbody>
                         <tr>
                             <td>Name</td>
-                            <td>{{profile.first_name}}  {{profile.last_name}}</td>
+                            <td>{{profile.first_name}} {{profile.last_name}}</td>
                         </tr>
                         <tr>
                             <td>Bio</td>
@@ -65,9 +64,12 @@ My Profile
                             <td>
                                 <ul>
                                     {% for friend in profile.get_friends %}
-                                        <li>{{friend}}</li>
-                                    {% endfor %}
+                                    <div class="vertical-menu">
+                                        <li>{{friend.first_name}} {{friend.last_name}}</li>
+                                        {% endfor %}
+                                    </div>
                                 </ul>
+
                             </td>
                         </tr>
                         <tr>

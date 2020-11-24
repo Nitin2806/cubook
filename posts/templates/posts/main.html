@@ -13,9 +13,9 @@
                         <div class="row">
                             {% ifequal request.user obj.author.user %}
                             <a href="{% url 'posts:post-update' obj.pk %}"><button
-                                    class="ui button bwhite-lg ">Update</button></a>
+                                    class="ui button bwhite-lg">Update</button></a>
                             <a href="{% url 'posts:post-delete' obj.pk %}"><button
-                                    class="ui button bwhite-lg ">Delete</button></a>
+                                    class="ui button bwhite-lg">Delete</button></a>
                             {% endifequal %}
                         </div>
                     </div>
@@ -69,11 +69,9 @@
                         <span>{{ c.user }}</span>
                         <div class='mt-5'>{{ c.body }}</div>
                     </div>
-
                     {% endfor %}
                     {% endif %}
                 </div>
-
                 <form action="" method="POST" class='ui fluid form'>
                     {% csrf_token %}
                     <input type="hidden" name="post_id" value={{obj.id}}>
@@ -149,7 +147,6 @@
                     console.log('error', response)
                 }
             })
-
         })
     });
 </script>
