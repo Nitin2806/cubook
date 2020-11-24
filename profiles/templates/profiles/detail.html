@@ -9,6 +9,7 @@ Profile Detail
     <br>
     <div class="row">
         <div class="four wide column">
+            <p style="font-size:20px"><b>{{object.user}}</b></p>
             <img class="ui medium rounded image" src={{object.avatar.url}}>
             <h1>{{object.first_name}}  {{object.last_name}}</h1>
             <div class="ui vertical fluid menu">
@@ -29,7 +30,6 @@ Profile Detail
                     <div class="ui label">{{ object.get_friends_no }}</div>
                 </div>
             </div>
-
             {% if object.user not in rel_receiver and object.user not in rel_sender %}
                 <form action="{% url 'profiles:send-invite' %}" method="POST">
                     {% csrf_token %}
@@ -49,9 +49,9 @@ Profile Detail
                     <button type="submit" class="ui negative basic button mb-5 w-big"><i class="minus square icon"></i>Remove from friends</button>
                 </form>
             {% endif %}
-
         </div>
         <div class="twelve wide column">
+        <p style="font-size:20px"><b>Posts</b></p>
             {% if len_posts %}
                 {% for post in posts %}
                     <div class="segment ui fluid">
