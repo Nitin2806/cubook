@@ -34,7 +34,6 @@
                     <form action="{% url 'posts:like-post-view' %}" method="POST" class='like-form' id='{{obj.id}}'>
                         {% csrf_token %}
                         <input type="hidden" name="post_id" value={{obj.id}}>
-
                         <button type="submit" class="ui button like-btn{{obj.id}}">
                             {% if profile not in obj.liked.all %}
                             <i class="heart icon"></i>Like
@@ -42,7 +41,6 @@
                             <i class="thumbs down icon"></i>Unlike
                             {% endif %}
                         </button>
-
                         <div class="ui grid">
                             <div class="column">
                                 <div class="like-count{{obj.id}}">{{obj.num_likes}}</div>
@@ -53,17 +51,17 @@
                         </div>
                     </form>
                 </div>
+               <!--<br><br>
                 <i class="comment icon"></i>
-                <span> {{ obj.num_comments }} Comments</span>
+                <span> {{ obj.num_comments }} Comments</span>--> 
             </div>
             <div class="extra content">
                 <div class="mb-5">
                 </div>
-                <button class="cmt_btn ui button mb-5"><i class="comment icon"></i>Comments</button>
+                <button class="cmt_btn ui button mb-5"><i class="comment icon"></i>{{ obj.num_comments }} Comments</button>
                 <div class="comment-box">
                     {% if obj.comment_set.all %}
                     {% for c in obj.comment_set.all %}
-
                     <div class="ui segment mb-5">
                         <img class="ui avatar image" src={{c.user.avatar.url}}>
                         <span>{{ c.user }}</span>
