@@ -8,8 +8,9 @@ Logout
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
-
+<div class="ui segment">
+<h1 class="ui left floated header">{% trans "Sign Out" %}</h1>
+<div class="ui clearing divider"></div>
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
 <form method="post" action="{% url 'account_logout' %}">
@@ -19,6 +20,10 @@ Logout
   {% endif %}
   <button type="submit" class='ui button secondary'>{% trans 'Sign Out' %}</button>
 </form>
-
-
+</div>
+</div>
+<b
+<br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>  
 {% endblock %}
