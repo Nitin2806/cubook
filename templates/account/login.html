@@ -10,7 +10,12 @@ Login
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<div class="ui segment">
+  
+  
+<h1 class="ui left floated header">{% trans "Sign In" %}</h1>
+<div class="ui clearing divider"></div>
+
 
 {% get_providers as socialaccount_providers %}
 
@@ -32,9 +37,13 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
+<p style="font-family:Trebuchet MS, sans-serif">{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
+
+<!--<button class="ui positive button" href="{{ signup_url }}">{% blocktrans %}<a href="{{ signup_url }}">Create New Account</a>
+{% endblocktrans %}</button>
+{% endif %}-->
+
 <div class="ui inverted segment">
 <div class="ui inverted form">
 <div class="ui grid">
@@ -52,4 +61,6 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 </div>
 </div>
 </div>
+</div>
+<br><br><br><br><br>
 {% endblock %}
