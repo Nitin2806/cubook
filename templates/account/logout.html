@@ -9,9 +9,9 @@ Logout
 
 {% block content %}
 <div class="ui segment">
-<h1 class="ui left floated header">{% trans "Sign Out" %}</h1>
+<h1 class="ui left floated header" style="font-family:Trebuchet MS, sans-serif">{% trans "Sign Out" %}</h1>
 <div class="ui clearing divider"></div>
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<p style="font-family:Trebuchet MS, sans-serif">{% trans 'Are you sure you want to sign out?' %}</p>
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
@@ -22,8 +22,7 @@ Logout
 </form>
 </div>
 </div>
-<b
-<br><br><br><br>
+<br><br><br>
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>    
 {% endblock %}
